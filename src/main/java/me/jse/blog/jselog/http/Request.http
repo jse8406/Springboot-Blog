@@ -1,0 +1,40 @@
+### Get 인터넷 브라우저 를 통해서는 get 요청만 보낼 수 있다.
+GET http://localhost:8080/test/hello
+
+###
+GET http://localhost:8080/blog/http/get?id=1&username=steve&password=1234
+###
+GET http://localhost:8080/blog/temp/home
+
+### Response
+POST http://localhost:8080/blog/http/post
+Content-Type: application/json
+// 한 줄 띄워야 잘 동작하네?
+
+{ "id": 1, "username": "steve", "password": "1234" }
+
+### join
+POST http://localhost:8080/blog/api/user
+Content-Type: application/json
+
+{
+    "username": "jse",
+    "password": "good",
+    "email": "jse@naver.com"
+}
+
+### detail
+GET http://localhost:8080/blog/dummy/member/1
+
+
+### ALL
+GET http://localhost:8080/blog/dummy/members
+
+### Page
+GET http://localhost:8080/blog/dummy/members/page
+
+### Gemini api
+POST https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyDiDWyAZADLcrlcGBxXTWsk4nrtwCoM1zg
+Content-Type: application/json
+
+{"contents":[{"parts":[{"text":"Explain how AI works"}]}]}

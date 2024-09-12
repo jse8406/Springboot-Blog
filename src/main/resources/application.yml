@@ -4,3 +4,21 @@ spring:
         url: jdbc:mysql://localhost:3306/blog?serverTimezone=Asia/Seoul
         username: jse
         password: 1234
+    jpa:
+        open-in-view: true
+        hibernate:
+            naming:
+                physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl #테이블명을 컬럼 변수 이름 그대로
+            ddl-auto: update #table을 실핼할 때 마다 생성, 초반 테스트시만 creaet, 배포 후에는 update로 변경
+        show-sql: false  #실행 시 같이 실행되는 sql문을 보여줌
+        properties:
+            hibernate.format_sql: true #sql문을 보기 좋게 출력
+    mvc:
+        view:
+            #원래 기본 경로는 src/main/resources/static이지만 여기서는 WEB-INF/views로 변경
+            prefix: /WEB-INF/views/
+            suffix: .jsp
+server:
+    port: 8080
+    servlet:
+        context-path: /
