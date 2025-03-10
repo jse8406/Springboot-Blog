@@ -37,7 +37,7 @@ public class Board {
     @JoinColumn(name = "memberId") //실제 DB상에서 User 테이블에 userId로 저장됨. 오브젝트를 적어도 실제 db상엔 FK가 생성됨
     private Member member;
 
-    // 기본 전략이 Lazy이다. 필요할 때 가져오는 전략, Board 정보만 필요한데 그 때마다 join문을 실행하면 낭비라 Lazy 전략을 사용한다.
+    // 기본 전략이 Lazy이다. 필요할 때 가져오는 전략,비 Board 정보만 필요한데 그 때마다 join문을 실행하면 낭라 Lazy 전략을 사용한다.
     @OneToMany(mappedBy = "board", fetch = FetchType.EAGER) // mappedby는 연관관계의 주인이 아니다. (난 FK가 아니에요) DB에 컬럼을 만들지 마세요.
     private List<Reply> reply;
 

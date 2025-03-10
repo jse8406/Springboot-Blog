@@ -2,10 +2,7 @@ package me.jse.blog.jselog.model;
 
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
@@ -19,7 +16,7 @@ public class Member {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) //Oracle은 SEQUENCE, MySQL은 Auto_Increment를 알아서 따라가게함.
     private int id;
-    @Column(nullable = false, unique = true, length = 30)
+    @Column(nullable = false, unique = true, length = 100)
     private  String username;
     @Column(nullable = false, length = 100) //해쉬로 암호화하면 길어질 수 있음
     private String password;

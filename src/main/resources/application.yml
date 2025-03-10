@@ -1,4 +1,6 @@
 spring:
+    main:
+        banner-mode: 'off'
     datasource:
         driver-class-name: com.mysql.cj.jdbc.Driver
         url: jdbc:mysql://localhost:3306/blog?serverTimezone=Asia/Seoul
@@ -9,7 +11,7 @@ spring:
         hibernate:
             naming:
                 physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl #테이블명을 컬럼 변수 이름 그대로
-            ddl-auto: update #table을 실핼할 때 마다 생성, 초반 테스트시만 creaet, 배포 후에는 update로 변경
+            ddl-auto: update #table을 실핼할 때 마다 생성, 초반 테스트시만 create, 배포 후에는 update 로 변경
         show-sql: false  #실행 시 같이 실행되는 sql문을 보여줌
         properties:
             hibernate.format_sql: true #sql문을 보기 좋게 출력
@@ -18,6 +20,11 @@ spring:
             #원래 기본 경로는 src/main/resources/static이지만 여기서는 WEB-INF/views로 변경
             prefix: /WEB-INF/views/
             suffix: .jsp
+    devtools:
+        livereload:
+            enabled: true
+        restart:
+            enabled: true
 server:
     port: 8080
     servlet:

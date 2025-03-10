@@ -36,7 +36,7 @@ public class BoardController {
     }
 
     @GetMapping("/board/{id}/updateForm")
-    public String updateForm(@PathVariable int id, Model model){
+    public String updateForm(@PathVariable(name = "id") int id, Model model){
         model.addAttribute("board", boardService.getDetails(id)); //수정히기위해 들어온 글의 상세 정보를 가져와서 뿌림
         return "board/updateForm";
     }

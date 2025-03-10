@@ -27,10 +27,6 @@ public class UserApiController {
     @Autowired
     private MemberService memberService;
 
-    @Autowired
-    private MemberRepository memberRepository;
-
-
 
     @PostMapping("/auth/joinProc")
     public ResponseDto<Integer> save(@RequestBody Member member){
